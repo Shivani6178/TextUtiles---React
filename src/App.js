@@ -11,15 +11,24 @@ import About from './components/About';
 
 function App() {
   const [mode, setmode] = useState(
-    'black'
+    'light'
   )
+
+  const handleMode = () =>{
+    if(mode === 'light'){
+      setmode('dark');
+      document.body.style.backgroundColor = '#563D7C';
+    }else{
+      setmode('light');
+      document.body.style.backgroundColor = '#FFFFFF';
+    }
+  }
   return (
     <>
-    
       <BrowserRouter>
-      <Navbar text="Sanjana" mode={mode} />
+      <Navbar text="Sanjana" mode={mode} handleMode={handleMode}/>
         <Routes>
-        <Route path="/" element={<Textform/>} />
+        <Route path="/" element={<Textform mode={mode}/>} />
         <Route path="/about" element={<About/>} />
        </Routes>
       </BrowserRouter>

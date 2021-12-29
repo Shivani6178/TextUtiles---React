@@ -1,28 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { useState } from 'react'
 export default function Navbar(props) {
+    // const [modeValue, setmodeValue] = useState('');
+
+    // const handleOnSelect = (eventkey) =>{
+    //     console.log(eventkey);
+    //     setmodeValue(eventkey);
+    // }
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-        <Link className="navbar-brand" to="/">{props.text}</Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
+            <a className={`navbar-brandtext text-${props.mode === 'light' ? 'dark' : 'light'}`} href="/">{props.text}</a>
+            <buthrefn className="navbar-hrefggler" type="buthrefn" data-hrefggle="collapse" data-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="hrefggle navigation">
+                <span className="navbar-hrefggler-icon"></span>
+            </buthrefn>
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <Link className="nav-link" to="/">Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/about">About</Link>
+                <ul className="navbar-nav mr-auhref">
+                    <li className="nav-item active text-decoration-none">
+                        <a className={`nav-a mx-3 text-${props.mode === 'light' ? 'dark' : 'light'}`} href="/">Home</a>
                     </li>
                 </ul>
-                <form className="d-flex">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
             </div>
+            <div className="form-check form-switch">
+                <input className="form-check-input" onClick={props.handleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                <label className={`form-check-label text-${props.mode === 'light' ? 'dark' : 'light'}`} htmlFor="flexSwitchCheckDefault">Enable dark Mode</label>
+            </div>
+
+            {/* <div className="dropdown">
+                <button className="btn btn-primary dropdown-toggle" onSelect={handleOnSelect} type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Change Mode
+                </button>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <span className="dropdown-item" eventkey="1">Dark Mode</span>
+                    <span className="dropdown-item" eventkey="2">Light Mode</span>
+                    <span className="dropdown-item" eventkey="3">Rainbow Mode</span>
+                </div>
+            </div> */}
+
         </nav>
     )
 }
