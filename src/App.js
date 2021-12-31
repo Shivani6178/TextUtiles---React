@@ -2,11 +2,11 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import { useState } from 'react';
-import {
-  BrowserRouter,
-  Route,
-  Routes
-} from "react-router-dom";
+// import {
+//   BrowserRouter,
+//   Route,
+//   Routes
+// } from "react-router-dom";
 import About from './components/About';
 
 function App() {
@@ -25,13 +25,15 @@ function App() {
   }
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
       <Navbar text="Sanjana" mode={mode} handleMode={handleMode}/>
         <Routes>
         <Route path="/" element={<Textform mode={mode}/>} />
         <Route path="/about" element={<About/>} />
        </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <Navbar text="Sanjana" mode={mode} handleMode={handleMode}/>
+      <Textform mode={mode}/>
     </>
   );
 }

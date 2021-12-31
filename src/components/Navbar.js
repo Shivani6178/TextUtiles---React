@@ -10,7 +10,7 @@ export default function Navbar(props) {
     // }
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-            <a className={`navbar-brandtext text-${props.mode === 'light' ? 'dark' : 'light'}`} href="/">{props.text}</a>
+            <a className={`navbar-brandtext text-${props.mode === 'light' ? 'dark' : 'light'}`} href="#">{props.text}</a>
             <buthrefn className="navbar-hrefggler" type="buthrefn" data-hrefggle="collapse" data-target="/navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="hrefggle navigation">
                 <span className="navbar-hrefggler-icon"></span>
             </buthrefn>
@@ -18,7 +18,7 @@ export default function Navbar(props) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auhref">
                     <li className="nav-item active text-decoration-none">
-                        <a className={`nav-a mx-3 text-${props.mode === 'light' ? 'dark' : 'light'}`} href="/">Home</a>
+                        <a className={`nav-a mx-3 text-${props.mode === 'light' ? 'dark' : 'light'}`} href="#">Home</a>
                     </li>
                 </ul>
             </div>
